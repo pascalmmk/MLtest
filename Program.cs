@@ -86,8 +86,10 @@ class Program
             .ToList()!;
 
         var grouped = allData.GroupBy(r => r.Name);
+        Console.WriteLine($"\n✅ Loaded data for {grouped.Count()} unique {itemLabel}(s).");
 
         var mlContext = new MLContext();
+        int forecastedCount = 0;
 
         foreach (var group in grouped)
         {
@@ -119,6 +121,7 @@ class Program
                 var forecastEngine = model.CreateTimeSeriesEngine<TimeSeriesInput, ForecastOutput>(mlContext);
                 var forecast = forecastEngine.Predict();
 
+                forecastedCount++;
                 Console.WriteLine($"\n📊 Forecast for {itemLabel} {name}:");
 
                 var lastKnown = dataList.TakeLast(3).ToList();
@@ -129,16 +132,51 @@ class Program
                 }
 
                 Console.WriteLine("🔮 Predicted Next 3 Months:");
+                var predictions = new List<(string Month, float Value)>();
                 for (int i = 0; i < forecast.ForecastedValue!.Length; i++)
                 {
                     var futureDate = dataList.Last().Date.AddMonths(i + 1);
-                    Console.WriteLine($"  {futureDate:yyyy-MM}: {forecast.ForecastedValue[i]:F0} {(choice == "1" ? "$" : "plays")}");
+                    float predictedValue = forecast.ForecastedValue[i];
+                    Console.WriteLine($"  {futureDate:yyyy-MM}: {predictedValue:F0} {(choice == "1" ? "$" : "plays")}");
+                    predictions.Add((futureDate.ToString("yyyy-MM"), predictedValue));
                 }
+
+                // Save forecast to JSON file
+                var result = new
+                {
+                    Name = name,
+                    Category = itemLabel,
+                    LastKnown = lastKnown.Select(r => new { Date = r.Date.ToString("yyyy-MM"), Value = r.Value }),
+                    Forecast = predictions.Select(p => new { Month = p.Month, PredictedValue = p.Value })
+                };
+
+                string outputFolder = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, @"..\..\..\forecast"));
+                Directory.CreateDirectory(outputFolder); // ensures folder exists
+                string safeName = name.Replace(" ", "_").Replace("/", "_");
+                string outputPath = Path.Combine(outputFolder, $"{itemLabel}_{safeName}_forecast.json");
+
+                var jsonOptions = new System.Text.Json.JsonSerializerOptions { WriteIndented = true };
+                string jsonContent = System.Text.Json.JsonSerializer.Serialize(result, jsonOptions);
+                File.WriteAllText(outputPath, jsonContent);
+
+                Console.WriteLine($"✅ Saved forecast to: {outputPath}");
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"⚠️ Error forecasting {name}: {ex.Message}");
             }
         }
+
+        if (forecastedCount == 0)
+        {
+            Console.WriteLine("\n⚠️ No forecast was generated. All entries were skipped (probably not enough data).");
+        }
+        else
+        {
+            Console.WriteLine($"\n✅ Forecasts completed for {forecastedCount} {itemLabel}(s).");
+        }
+
+        Console.WriteLine("\nPress any key to exit...");
+        Console.ReadKey();
     }
 }

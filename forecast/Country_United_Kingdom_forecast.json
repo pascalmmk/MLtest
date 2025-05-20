@@ -1,0 +1,32 @@
+{
+  "Name": "United Kingdom",
+  "Category": "Country",
+  "LastKnown": [
+    {
+      "Date": "2024-10",
+      "Value": 505
+    },
+    {
+      "Date": "2024-11",
+      "Value": 500
+    },
+    {
+      "Date": "2024-12",
+      "Value": 617
+    }
+  ],
+  "Forecast": [
+    {
+      "Month": "2025-01",
+      "PredictedValue": 511.73083
+    },
+    {
+      "Month": "2025-02",
+      "PredictedValue": 568.58887
+    },
+    {
+      "Month": "2025-03",
+      "PredictedValue": 521.1768
+    }
+  ]
+}

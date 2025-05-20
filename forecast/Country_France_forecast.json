@@ -1,0 +1,32 @@
+{
+  "Name": "France",
+  "Category": "Country",
+  "LastKnown": [
+    {
+      "Date": "2024-10",
+      "Value": 462
+    },
+    {
+      "Date": "2024-11",
+      "Value": 535
+    },
+    {
+      "Date": "2024-12",
+      "Value": 577
+    }
+  ],
+  "Forecast": [
+    {
+      "Month": "2025-01",
+      "PredictedValue": 538.9226
+    },
+    {
+      "Month": "2025-02",
+      "PredictedValue": 545.69434
+    },
+    {
+      "Month": "2025-03",
+      "PredictedValue": 552.7607
+    }
+  ]
+}

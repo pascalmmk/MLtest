@@ -1,0 +1,32 @@
+{
+  "Name": "Canada",
+  "Category": "Country",
+  "LastKnown": [
+    {
+      "Date": "2024-10",
+      "Value": 926
+    },
+    {
+      "Date": "2024-11",
+      "Value": 779
+    },
+    {
+      "Date": "2024-12",
+      "Value": 895
+    }
+  ],
+  "Forecast": [
+    {
+      "Month": "2025-01",
+      "PredictedValue": 868.5547
+    },
+    {
+      "Month": "2025-02",
+      "PredictedValue": 869.8912
+    },
+    {
+      "Month": "2025-03",
+      "PredictedValue": 870.9244
+    }
+  ]
+}

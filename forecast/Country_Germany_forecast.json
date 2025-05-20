@@ -1,0 +1,32 @@
+{
+  "Name": "Germany",
+  "Category": "Country",
+  "LastKnown": [
+    {
+      "Date": "2024-10",
+      "Value": 905
+    },
+    {
+      "Date": "2024-11",
+      "Value": 874
+    },
+    {
+      "Date": "2024-12",
+      "Value": 826
+    }
+  ],
+  "Forecast": [
+    {
+      "Month": "2025-01",
+      "PredictedValue": 851.0023
+    },
+    {
+      "Month": "2025-02",
+      "PredictedValue": 841.2511
+    },
+    {
+      "Month": "2025-03",
+      "PredictedValue": 832.4595
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V3H8kxo1Ewc=",
+  "dgSpecHash": "o872m5huOUc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\semsem\\Documents\\MLproject\\ChinookM\\ChinookM.csproj",
+  "projectFilePath": "C:\\Users\\semsem\\Documents\\GitHub\\MLtest\\ChinookM.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\semsem\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\semsem\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

@@ -1,0 +1,32 @@
+{
+  "Name": "USA",
+  "Category": "Country",
+  "LastKnown": [
+    {
+      "Date": "2024-10",
+      "Value": 500
+    },
+    {
+      "Date": "2024-11",
+      "Value": 510
+    },
+    {
+      "Date": "2024-12",
+      "Value": 621
+    }
+  ],
+  "Forecast": [
+    {
+      "Month": "2025-01",
+      "PredictedValue": 538.8294
+    },
+    {
+      "Month": "2025-02",
+      "PredictedValue": 538.03735
+    },
+    {
+      "Month": "2025-03",
+      "PredictedValue": 536.0843
+    }
+  ]
+}
