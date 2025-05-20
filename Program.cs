@@ -90,6 +90,7 @@ class Program
 
         var mlContext = new MLContext();
         int forecastedCount = 0;
+        var allForecasts = new List<object>();
 
         foreach (var group in grouped)
         {
@@ -141,7 +142,6 @@ class Program
                     predictions.Add((futureDate.ToString("yyyy-MM"), predictedValue));
                 }
 
-                // Save forecast to JSON file
                 var result = new
                 {
                     Name = name,
@@ -150,16 +150,7 @@ class Program
                     Forecast = predictions.Select(p => new { Month = p.Month, PredictedValue = p.Value })
                 };
 
-                string outputFolder = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, @"..\..\..\forecast"));
-                Directory.CreateDirectory(outputFolder); // ensures folder exists
-                string safeName = name.Replace(" ", "_").Replace("/", "_");
-                string outputPath = Path.Combine(outputFolder, $"{itemLabel}_{safeName}_forecast.json");
-
-                var jsonOptions = new System.Text.Json.JsonSerializerOptions { WriteIndented = true };
-                string jsonContent = System.Text.Json.JsonSerializer.Serialize(result, jsonOptions);
-                File.WriteAllText(outputPath, jsonContent);
-
-                Console.WriteLine($"✅ Saved forecast to: {outputPath}");
+                allForecasts.Add(result);
             }
             catch (Exception ex)
             {
@@ -174,6 +165,18 @@ class Program
         else
         {
             Console.WriteLine($"\n✅ Forecasts completed for {forecastedCount} {itemLabel}(s).");
+
+            string outputFolder = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, @"..\..\..\forecast"));
+            Directory.CreateDirectory(outputFolder);
+
+            string fileName = (choice == "1") ? "country_forecast.json" : "genre_forecast.json";
+            string combinedOutputPath = Path.Combine(outputFolder, fileName);
+
+            var jsonOptions = new System.Text.Json.JsonSerializerOptions { WriteIndented = true };
+            string jsonContent = System.Text.Json.JsonSerializer.Serialize(allForecasts, jsonOptions);
+            File.WriteAllText(combinedOutputPath, jsonContent);
+
+            Console.WriteLine($"📁 All forecasts saved to: {combinedOutputPath}");
         }
 
         Console.WriteLine("\nPress any key to exit...");

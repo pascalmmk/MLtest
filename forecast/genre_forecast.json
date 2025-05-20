@@ -1,0 +1,194 @@
+[
+  {
+    "Name": "Rock",
+    "Category": "Genre",
+    "LastKnown": [
+      {
+        "Date": "2024-10",
+        "Value": 53
+      },
+      {
+        "Date": "2024-11",
+        "Value": 105
+      },
+      {
+        "Date": "2024-12",
+        "Value": 52
+      }
+    ],
+    "Forecast": [
+      {
+        "Month": "2025-01",
+        "PredictedValue": 68.415924
+      },
+      {
+        "Month": "2025-02",
+        "PredictedValue": 67.50917
+      },
+      {
+        "Month": "2025-03",
+        "PredictedValue": 66.693275
+      }
+    ]
+  },
+  {
+    "Name": "Pop",
+    "Category": "Genre",
+    "LastKnown": [
+      {
+        "Date": "2024-10",
+        "Value": 231
+      },
+      {
+        "Date": "2024-11",
+        "Value": 214
+      },
+      {
+        "Date": "2024-12",
+        "Value": 262
+      }
+    ],
+    "Forecast": [
+      {
+        "Month": "2025-01",
+        "PredictedValue": 236.97263
+      },
+      {
+        "Month": "2025-02",
+        "PredictedValue": 237.53767
+      },
+      {
+        "Month": "2025-03",
+        "PredictedValue": 238.16415
+      }
+    ]
+  },
+  {
+    "Name": "Jazz",
+    "Category": "Genre",
+    "LastKnown": [
+      {
+        "Date": "2024-10",
+        "Value": 227
+      },
+      {
+        "Date": "2024-11",
+        "Value": 204
+      },
+      {
+        "Date": "2024-12",
+        "Value": 214
+      }
+    ],
+    "Forecast": [
+      {
+        "Month": "2025-01",
+        "PredictedValue": 212.93869
+      },
+      {
+        "Month": "2025-02",
+        "PredictedValue": 211.72235
+      },
+      {
+        "Month": "2025-03",
+        "PredictedValue": 210.65594
+      }
+    ]
+  },
+  {
+    "Name": "Classical",
+    "Category": "Genre",
+    "LastKnown": [
+      {
+        "Date": "2024-10",
+        "Value": 116
+      },
+      {
+        "Date": "2024-11",
+        "Value": 104
+      },
+      {
+        "Date": "2024-12",
+        "Value": 103
+      }
+    ],
+    "Forecast": [
+      {
+        "Month": "2025-01",
+        "PredictedValue": 107.255936
+      },
+      {
+        "Month": "2025-02",
+        "PredictedValue": 106.8915
+      },
+      {
+        "Month": "2025-03",
+        "PredictedValue": 106.647934
+      }
+    ]
+  },
+  {
+    "Name": "Hip-Hop",
+    "Category": "Genre",
+    "LastKnown": [
+      {
+        "Date": "2024-10",
+        "Value": 257
+      },
+      {
+        "Date": "2024-11",
+        "Value": 242
+      },
+      {
+        "Date": "2024-12",
+        "Value": 210
+      }
+    ],
+    "Forecast": [
+      {
+        "Month": "2025-01",
+        "PredictedValue": 235.21635
+      },
+      {
+        "Month": "2025-02",
+        "PredictedValue": 234.18123
+      },
+      {
+        "Month": "2025-03",
+        "PredictedValue": 233.49585
+      }
+    ]
+  },
+  {
+    "Name": "Metal",
+    "Category": "Genre",
+    "LastKnown": [
+      {
+        "Date": "2024-10",
+        "Value": 272
+      },
+      {
+        "Date": "2024-11",
+        "Value": 233
+      },
+      {
+        "Date": "2024-12",
+        "Value": 208
+      }
+    ],
+    "Forecast": [
+      {
+        "Month": "2025-01",
+        "PredictedValue": 236.86044
+      },
+      {
+        "Month": "2025-02",
+        "PredictedValue": 236.51982
+      },
+      {
+        "Month": "2025-03",
+        "PredictedValue": 236.11761
+      }
+    ]
+  }
+]
